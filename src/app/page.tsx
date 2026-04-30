@@ -1,12 +1,28 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import {
   Search, Loader2, Cpu, Layout, Wrench, Globe, ExternalLink,
   Database, BarChart, Shield, Network, Server, CreditCard,
   ShoppingCart, Zap, Info
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+function SearchParamsHandler({ setUrl }: { setUrl: (url: string) => void }) {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const urlParam = searchParams.get('url');
+    if (urlParam) {
+      // Basic sanitization: remove script tags and potentially dangerous chars
+      const sanitized = urlParam.replace(/[<>]/g, '').trim();
+      if (sanitized) {
+        setUrl(sanitized);
+      }
+    }
+  }, [searchParams, setUrl]);
+  return null;
+}
 
 interface TechItem {
   name: string;
@@ -143,7 +159,9 @@ export default function Home() {
     : 0;
 
   return (
-    <div className="app-container">
+    <Suspense fallback={<div className="loading-state">Initializing Discovery Engine...</div>}>
+      <SearchParamsHandler setUrl={setUrl} />
+      <div className="app-container">
       <div className="decor-pink" />
       <div className="decor-purple" />
       <Marquee />
@@ -305,6 +323,7 @@ export default function Home() {
       <footer className="app-footer">
         FindStacks © 2026 // Next-Gen Technology Discovery Engine
       </footer>
-    </div>
+      </div>
+    </Suspense>
   );
 }

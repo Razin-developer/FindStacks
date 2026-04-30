@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/logo.png",
+  },
+  other: {
+    "backendlab-verify": "bl_v_molbtwr7_ugd6d5dx",
   }
 };
 
@@ -44,9 +47,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="backendlab-verify" content="bl_v_molbtwr7_ugd6d5dx" />
-      </head>
       <body className={`${inter.variable} ${outfit.variable}`}>
         {children}
       </body>

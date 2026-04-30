@@ -42,7 +42,7 @@ const Marquee = () => (
     >
       {[...Array(10)].map((_, i) => (
         <div key={i} className="marquee-item">
-          🚀 ANALYZE ANY SITE <span className="spacer">✦</span>
+          ANALYZE ANY SITE <span className="spacer">✦</span>
           FIND FRONTEND STACKS <span className="spacer">✦</span>
           REVEAL BACKEND TOOLS <span className="spacer">✦</span>
         </div>
@@ -138,7 +138,7 @@ export default function Home() {
     }
   };
 
-  const totalTechCount = report 
+  const totalTechCount = report
     ? Object.values(report).reduce((acc, items) => acc + (Array.isArray(items) ? items.length : 0), 0)
     : 0;
 
@@ -193,7 +193,7 @@ export default function Home() {
               </button>
             ))}
           </div>
-          <button 
+          <button
             onClick={() => setCompareMode(!compareMode)}
             className={`compare-toggle ${compareMode ? 'active' : ''}`}
           >
@@ -204,7 +204,7 @@ export default function Home() {
         <div className="info-banner">
           <Info className="info-banner-icon" size={24} />
           <p className="info-banner-text">
-            <strong>SYSTEM NOTICE:</strong> {compareMode ? "Comparison mode executes 3 simultaneous scans." : `Selected engine: ${selectedModel.toUpperCase()}.`} 
+            <strong>SYSTEM NOTICE:</strong> {compareMode ? "Comparison mode executes 3 simultaneous scans." : `Selected engine: ${selectedModel.toUpperCase()}.`}
             Deep scan may fail if target server employs aggressive anti-bot shielding.
           </p>
         </div>
@@ -240,12 +240,12 @@ export default function Home() {
                         const config = categoryConfig[key] || { title: key.toUpperCase(), icon: Info, color: "#fff" };
                         if (!Array.isArray(items) || items.length === 0) return null;
                         return (
-                          <StackCard 
+                          <StackCard
                             key={key}
-                            title={config.title} 
-                            icon={config.icon} 
-                            items={items} 
-                            color={config.color} 
+                            title={config.title}
+                            icon={config.icon}
+                            items={items}
+                            color={config.color}
                           />
                         );
                       })
@@ -277,12 +277,12 @@ export default function Home() {
                   const config = categoryConfig[key] || { title: key.toUpperCase(), icon: Info, color: "#fff" };
                   if (!Array.isArray(items)) return null;
                   return (
-                    <StackCard 
+                    <StackCard
                       key={key}
-                      title={config.title} 
-                      icon={config.icon} 
-                      items={items} 
-                      color={config.color} 
+                      title={config.title}
+                      icon={config.icon}
+                      items={items}
+                      color={config.color}
                     />
                   );
                 })}

@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 FindStacks
 
-## Getting Started
+**The Space Between Tech & Stacks.**  
+Discover the hidden technology behind any website with a single click.
 
-First, run the development server:
+[![Hosted Link](https://img.shields.io/badge/Live-findstacks.vercel.app-FF0066?style=for-the-badge&logo=vercel)](https://findstacks.vercel.app)
+[![Tech Stack](https://img.shields.io/badge/Built%20With-Next.js%2016-000000?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![Design](https://img.shields.io/badge/Design-Neo--Brutalist-FFFF00?style=for-the-badge&logo=google-chrome)](https://findstacks.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+FindStacks is a high-performance technology discovery engine designed to deconstruct any website's architecture. Built with a bold **Neo-Brutalist** aesthetic and powered by multiple LLM backends, it provides deep insights into the frontend frameworks, backend tools, and external services that power the modern web.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+### 🔍 Deep Intelligence Scanning
+Unlike simple regex-based detectors, FindStacks analyzes meta tags, script structures, HTTP headers, and server fingerprints to provide a comprehensive architectural map.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🤖 Multi-LLM Processing
+Choose your preferred intelligence engine for analysis:
+- **ChatGPT**: High-speed pattern recognition.
+- **Claude**: Nuanced script and metadata analysis.
+- **Gemini**: Massive context window for deep server-side fingerprinting.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ⚖️ Comparison Mode (The "Tri-Scan")
+Execute three simultaneous scans using ChatGPT, Claude, and Gemini. Compare their findings in real-time to identify the most accurate technology signatures.
 
-## Deploy on Vercel
+### 📂 Categorized Discovery
+We identify and categorize tech across 10+ dimensions:
+- **Frontend**: React, Next.js, Vue, Tailwind, etc.
+- **Backend & CMS**: Node.js, Django, WordPress, Shopify.
+- **Infrastructure**: Hosting providers, CDNs, and DNS.
+- **Operations**: Analytics, Payments, Security, and E-Commerce tools.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🏗️ Built With
+
+- **Framework**: [Next.js 16](https://nextjs.org) (App Router)
+- **Styling**: Vanilla CSS (Neo-Brutalist System)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Scraping**: Axios & Cheerio
+- **Intelligence**: OpenAI, Anthropic, and Google Gemini APIs
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- API Keys for OpenAI, Anthropic, or Google Gemini (stored in `.env.local`)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/razin-developer/FindStacks.git
+   cd FindStacks
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables:**
+   Create a `.env.local` file:
+   ```env
+   OPENAI_API_KEY=your_key
+   CLAUDE_API_KEY=your_key
+   GEMINI_API_KEY=your_key
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open the app:**
+   Navigate to [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 🎨 Design Philosophy
+
+FindStacks follows a **Neo-Brutalist** design system:
+- **Bold Typography**: Using Geist for a modern, industrial feel.
+- **High Contrast**: Vibrant yellows, cyans, and purples against deep blacks.
+- **Interactive UI**: Motion-heavy feedback loops and real-time marquee indicators.
+
+---
+
+## 🔗 Links
+
+- **Hosted Application**: [findstacks.vercel.app](https://findstacks.vercel.app)
+- **Developer**: [Razin](https://github.com/razin-developer)
+
+---
+
+<div align="center">
+  FindStacks © 2026 // Next-Gen Technology Discovery Engine
+</div>

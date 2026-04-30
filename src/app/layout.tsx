@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FindStacks | Tech Stack Discovery",
     description: "Reveal the hidden technology behind any URL.",
-    url: "https://findstacks.zydcode.in",
+    url: "https://findstacks.vercel.app",
     siteName: "FindStacks",
     images: [
       {

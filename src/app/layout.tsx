@@ -6,6 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://findstacks.vercel.app'),
   title: "FindStacks | Modern Technology Stack Analyzer",
   description: "Discover the frontend frameworks, backend runtimes, and external tools used by any website. High-performance signature detection with ChatGPT, Claude, and Gemini engines.",
   keywords: ["tech stack", "website analyzer", "react", "nextjs", "stack finder", "web discovery"],

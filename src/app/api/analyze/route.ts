@@ -35,7 +35,14 @@ async function assertSafeTarget(rawUrl: string) {
 
 export async function POST(req: Request) {
   try {
-    const { url, model } = await req.json();
+    let body;
+    try {
+      body = await req.json();
+    } catch (e) {
+      return NextResponse.json({ error: "Invalid or missing JSON body" }, { status: 400 });
+    }
+
+    const { url, model } = body;
     if (!url) return NextResponse.json({ error: "URL is required" }, { status: 400 });
 
     await assertSafeTarget(url);

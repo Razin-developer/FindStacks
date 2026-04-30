@@ -6,7 +6,7 @@ import type { NextRequest } from 'next/server';
 // For production, use a database or Redis (e.g., Upstash).
 const rateLimitMap = new Map<string, { count: number; startTime: number }>();
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const response = NextResponse.next();
 
   // 1. Security Headers (Already handled in next.config.ts, but can be reinforced here)
@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
   // response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
 
   // 2. Rate Limiting for API routes
-  const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown';
+  const ip = request.headers.get('x-forwarded-for') || '127.0.0.1';
   const now = Date.now();
   const windowMs = 60 * 1000; // 1 minute
   const maxRequests = 30; // limit to 5 analysis per minute

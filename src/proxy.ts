@@ -18,7 +18,7 @@ export function proxy(request: NextRequest) {
   const ip = request.headers.get('x-forwarded-for') || '127.0.0.1';
   const now = Date.now();
   const windowMs = 60 * 1000; // 1 minute
-  const maxRequests = 30; // limit to 5 analysis per minute
+  const maxRequests = 150; // limit to 5 analysis per minute
 
   const rateData = rateLimitMap.get(ip) || { count: 0, startTime: now };
 

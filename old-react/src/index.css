@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@900&display=swap');
+
+:root {
+  --bg-color: #f8f8f8;
+  --grid-color: #e0e0e0;
+  --accent-yellow: #ffff00;
+  --accent-lime: #ccff00;
+  --accent-pink: #ff00ff;
+  --accent-purple: #7000ff;
+  --text-black: #000000;
+  --border-width: 3px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: var(--text-black);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Base UI Components */
+.btn-primary {
+  padding: 0 40px;
+  background: var(--accent-pink);
+  border: var(--border-width) solid var(--text-black);
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--text-black);
+  transition: all 0.1s;
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--text-black);
+}
+
+.input-neo {
+  flex: 1;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+  border: var(--border-width) solid var(--text-black);
+  outline: none;
+  background: white;
+  box-shadow: 4px 4px 0 var(--text-black);
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-custom {
+  animation: spin 1s linear infinite;
+}

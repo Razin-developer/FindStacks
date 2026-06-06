@@ -1,63 +1,71 @@
 import { NextResponse } from 'next/server';
-import { lookup } from "node:dns/promises";
-import net from "node:net";
-import { analyzeChatGPT } from '@/lib/chatgpt';
-import { analyzeGemini } from '@/lib/gemini';
-import { analyzeClaude } from '@/lib/claude';
+import { analyzeChatGPTTechStack } from '@/lib/tech-stack/chatgpt';
+import { analyzeGeminiTechStack } from '@/lib/tech-stack/gemini';
+import { analyzeClaudeTechStack } from '@/lib/tech-stack/claude';
+import { analyzeChatGPTPublicEnv } from '@/lib/public-env/chatgpt';
+import { analyzeGeminiPublicEnv } from '@/lib/public-env/gemini';
+import { analyzeClaudePublicEnv } from '@/lib/public-env/claude';
+import type { AnalysisMode, AnalysisResult, ModelId } from '@/lib/analysis/types';
 
-// ==========================================
-// SECURITY HELPERS
-// ==========================================
-function isPrivateIp(ip: string) {
-  const family = net.isIP(ip);
-  if (family === 4) {
-    const parts = ip.split(".").map(Number);
-    return parts[0] === 10 || (parts[0] === 172 && parts[1] >= 16 && parts[1] <= 31) || (parts[0] === 192 && parts[1] === 168) || parts[0] === 127;
-  }
-  return ip.startsWith("fe80:") || ip === "::1" || ip === "::";
-}
+async function runAnalysis(model: ModelId, url: string, mode: AnalysisMode): Promise<AnalysisResult> {
+  const result: AnalysisResult = {};
 
-async function assertSafeTarget(rawUrl: string) {
-  const parsed = new URL(rawUrl);
-  if (!["http:", "https:"].includes(parsed.protocol)) throw new Error("Invalid protocol");
-  const hostname = parsed.hostname.toLowerCase();
-  if (["localhost", "127.0.0.1", "::1"].includes(hostname)) throw new Error("Local targets forbidden");
-  
-  try {
-    const addresses = await lookup(hostname, { all: true });
-    for (const addr of addresses) {
-      if (isPrivateIp(addr.address)) throw new Error("Private IP target forbidden");
+  if (mode === 'tech-stack' || mode === 'both') {
+    switch (model) {
+      case 'chatgpt':
+        result.techStack = await analyzeChatGPTTechStack(url);
+        break;
+      case 'gemini':
+        result.techStack = await analyzeGeminiTechStack(url);
+        break;
+      case 'claude':
+        result.techStack = await analyzeClaudeTechStack(url);
+        break;
     }
-  } catch (e: any) {
-    if (e.message.includes("forbidden")) throw e;
   }
+
+  if (mode === 'public-env' || mode === 'both') {
+    switch (model) {
+      case 'chatgpt':
+        result.publicEnv = await analyzeChatGPTPublicEnv(url);
+        break;
+      case 'gemini':
+        result.publicEnv = await analyzeGeminiPublicEnv(url);
+        break;
+      case 'claude':
+        result.publicEnv = await analyzeClaudePublicEnv(url);
+        break;
+    }
+  }
+
+  return result;
 }
 
 export async function POST(req: Request) {
   try {
-    let body;
+    let body: unknown;
     try {
       body = await req.json();
-    } catch (e) {
+    } catch {
       return NextResponse.json({ error: "Invalid or missing JSON body" }, { status: 400 });
     }
 
-    const { url, model } = body;
+    const { url, model, mode } = body as {
+      url?: string;
+      model?: ModelId;
+      mode?: AnalysisMode;
+    };
     if (!url) return NextResponse.json({ error: "URL is required" }, { status: 400 });
 
-    await assertSafeTarget(url);
-
-    let result;
-    switch (model) {
-      case 'chatgpt': result = await analyzeChatGPT(url); break;
-      case 'gemini': result = await analyzeGemini(url); break;
-      case 'claude': result = await analyzeClaude(url); break;
-      default: result = await analyzeChatGPT(url);
-    }
+    const safeModel: ModelId = model === 'gemini' || model === 'claude' ? model : 'chatgpt';
+    const safeMode: AnalysisMode =
+      mode === 'public-env' || mode === 'both' ? mode : 'tech-stack';
+    const result = await runAnalysis(safeModel, url, safeMode);
 
     return NextResponse.json(result);
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Unexpected analysis failure';
     console.error('API Error:', error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

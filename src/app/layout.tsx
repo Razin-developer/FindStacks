@@ -7,13 +7,13 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://findstacks.vercel.app'),
-  title: "FindStacks | Modern Technology Stack Analyzer",
-  description: "Discover the frontend frameworks, backend runtimes, and external tools used by any website. High-performance signature detection with ChatGPT, Claude, and Gemini engines.",
-  keywords: ["tech stack", "website analyzer", "react", "nextjs", "stack finder", "web discovery"],
+  title: "FindStacks | Stack + Public ENV Analyzer",
+  description: "Discover hidden tech stacks, browser-visible public environment variables, and client-side build clues with ChatGPT, Claude, and Gemini engines.",
+  keywords: ["tech stack", "website analyzer", "public env", "runtime config", "nextjs", "stack finder", "web discovery"],
   authors: [{ name: "FindStacks Team" }],
   openGraph: {
-    title: "FindStacks | Tech Stack Discovery",
-    description: "Reveal the hidden technology behind any URL.",
+    title: "FindStacks | Stack + Public ENV Discovery",
+    description: "Reveal hidden technologies and public runtime config behind any URL.",
     url: "https://findstacks.vercel.app",
     siteName: "FindStacks",
     images: [
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FindStacks | Tech Stack Discovery",
-    description: "Reveal the hidden technology behind any URL.",
+    title: "FindStacks | Stack + Public ENV Discovery",
+    description: "Reveal hidden technologies and public runtime config behind any URL.",
     images: ["/logo.png"],
   },
   icons: {

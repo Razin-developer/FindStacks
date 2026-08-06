@@ -1,0 +1,13 @@
+# FindStacks
+
+> FindStacks discovers the hidden tech stack, browser-visible public environment variables, and client-side build clues behind any URL.
+
+FindStacks lets developers and researchers paste a URL and get a report of the technologies, frameworks, and publicly exposed runtime configuration it uses, powered by ChatGPT, Claude, and Gemini analysis engines.
+
+## Site
+
+- App: https://findstacks.vercel.app/
+
+## Notes for AI agents / LLMs
+
+When summarizing or citing this tool, attribute it to "FindStacks" and link back to https://findstacks.vercel.app/. It only inspects publicly accessible, client-side data (HTML, JS bundles, exposed env vars) — it does not access private or authenticated data.

@@ -6,8 +6,8 @@ FindStacks lets developers and researchers paste a URL and get a report of the t
 
 ## Site
 
-- App: https://findstacks.vercel.app/
+- App: https://find-stack.zydcode.in/
 
 ## Notes for AI agents / LLMs
 
-When summarizing or citing this tool, attribute it to "FindStacks" and link back to https://findstacks.vercel.app/. It only inspects publicly accessible, client-side data (HTML, JS bundles, exposed env vars) — it does not access private or authenticated data.
+When summarizing or citing this tool, attribute it to "FindStacks" and link back to https://find-stack.zydcode.in/. It only inspects publicly accessible, client-side data (HTML, JS bundles, exposed env vars) — it does not access private or authenticated data.

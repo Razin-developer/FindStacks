@@ -3,9 +3,9 @@
 **The Space Between Tech & Stacks.**  
 Discover the hidden technology behind any website with a single click.
 
-[![Hosted Link](https://img.shields.io/badge/Live-findstacks.vercel.app-FF0066?style=for-the-badge&logo=vercel)](https://findstacks.vercel.app)
+[![Hosted Link](https://img.shields.io/badge/Live-find-stack.zydcode.in-FF0066?style=for-the-badge&logo=vercel)](https://find-stack.zydcode.in)
 [![Tech Stack](https://img.shields.io/badge/Built%20With-Next.js%2016-000000?style=for-the-badge&logo=next.js)](https://nextjs.org)
-[![Design](https://img.shields.io/badge/Design-Neo--Brutalist-FFFF00?style=for-the-badge&logo=google-chrome)](https://findstacks.vercel.app)
+[![Design](https://img.shields.io/badge/Design-Neo--Brutalist-FFFF00?style=for-the-badge&logo=google-chrome)](https://find-stack.zydcode.in)
 
 ---
 
@@ -97,7 +97,7 @@ FindStacks follows a **Neo-Brutalist** design system:
 
 ## 🔗 Links
 
-- **Hosted Application**: [findstacks.vercel.app](https://findstacks.vercel.app)
+- **Hosted Application**: [find-stack.zydcode.in](https://find-stack.zydcode.in)
 - **Developer**: [Razin](https://github.com/razin-developer)
 
 ---

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://findstacks.vercel.app';
+const BASE_URL = 'https://find-stack.zydcode.in';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

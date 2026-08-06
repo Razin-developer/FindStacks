@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://findstacks.vercel.app/sitemap.xml',
+    sitemap: 'https://find-stack.zydcode.in/sitemap.xml',
   };
 }

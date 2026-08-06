@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://findstacks.vercel.app'),
+  metadataBase: new URL('https://find-stack.zydcode.in'),
   title: "FindStacks | Stack + Public ENV Analyzer",
   description: "Discover hidden tech stacks, browser-visible public environment variables, and client-side build clues with ChatGPT, Claude, and Gemini engines.",
   keywords: ["tech stack", "website analyzer", "public env", "runtime config", "nextjs", "stack finder", "web discovery"],
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FindStacks | Stack + Public ENV Discovery",
     description: "Reveal hidden technologies and public runtime config behind any URL.",
-    url: "https://findstacks.vercel.app",
+    url: "https://find-stack.zydcode.in",
     siteName: "FindStacks",
     images: [
       {
@@ -44,7 +44,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'FindStacks',
-  url: 'https://findstacks.vercel.app',
+  url: 'https://find-stack.zydcode.in',
   description:
     'Discover hidden tech stacks, browser-visible public environment variables, and client-side build clues with ChatGPT, Claude, and Gemini engines.',
   applicationCategory: 'DeveloperApplication',
